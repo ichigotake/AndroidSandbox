@@ -1,16 +1,24 @@
-package material.sandbox.ichigotake.net.material;
+package net.ichigotake.sandbox.material;
 
+import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import net.ichigotake.sandbox.material.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        User user = new User();
+        user.setFirstName("Yamada");
+        user.setLastName("Taro");
+        binding.setUser(user);
+        binding.executePendingBindings();
     }
 
     @Override

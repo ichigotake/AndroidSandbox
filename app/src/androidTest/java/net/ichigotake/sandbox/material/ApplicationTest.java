@@ -1,4 +1,4 @@
-package material.sandbox.ichigotake.net.material;
+package net.ichigotake.sandbox.material;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
